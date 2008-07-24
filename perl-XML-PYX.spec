@@ -1,6 +1,6 @@
 %define module 	XML-PYX
 %define version 0.07
-%define release %mkrel 7
+%define release %mkrel 9
 
 Summary:	%{module} perl module
 Name: 		perl-%{module}
