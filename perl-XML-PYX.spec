@@ -1,27 +1,27 @@
-%define module 	XML-PYX
-%define version 0.07
-%define release %mkrel 10
+%define upstream_name 	 XML-PYX
+%define upstream_version 0.07
 
-Summary:	%{module} perl module
-Name: 		perl-%{module}
-Version: 	%{version}
-Release: 	%{release}
-License: 	GPL or Artistic
-Url:		http://search.cpan.org/dist/%{module} 
+Name: 		perl-%{upstream_name}
+Version: 	%perl_convert_version %{upstream_version}
+Release: 	%mkrel 1
+
+Summary:	%{upstream_name} perl module
+License: 	GPL+ or Artistic
 Group:		Development/Perl
-Source0:	http://www.cpan.org/modules/by-module/XML/%{module}-%{version}.tar.bz2
-Requires: 	perl 
+Url:		http://search.cpan.org/dist/%{upstream_name} 
+Source0:	http://www.cpan.org/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl(XML::Parser)
-BuildRequires:  perl-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 Buildarch: 	noarch
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
+Requires: 	perl 
 
 %description
-%{module} perl module
+%{upstream_name} perl module
 
 
 %prep
-%setup -q  -n %{module}-%{version}
+%setup -q  -n %{upstream_name}-%{upstream_version}
 
 %build
 
@@ -43,6 +43,3 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/XML/*
 %{_mandir}/*/*
 %_bindir/*
-
-
-
