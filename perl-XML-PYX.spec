@@ -1,15 +1,13 @@
 %define upstream_name 	 XML-PYX
-%define upstream_version 0.07
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.07
+Release:	6
 
 Summary:	%{upstream_name} perl module
 License: 	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/XML-PYX 
-Source0:	https://cpan.metacpan.org/authors/id/M/MS/MSERGEANT/XML-PYX-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/M/MS/MSERGEANT/XML-PYX-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -20,7 +18,7 @@ BuildArch: 	noarch
 %{upstream_name} perl module
 
 %prep
-%setup -q  -n %{upstream_name}-%{upstream_version}
+%setup -q  -n %{upstream_name}-%{version}
 
 %build
 CFLAGS="%{optflags}" perl Makefile.PL INSTALLDIRS=vendor
@@ -41,9 +39,7 @@ make test
 %changelog
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.70.0-1mdv2010.0
 + Revision: 401855
-- rebuild using %%perl_convert_version
-
-* Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.07-10mdv2009.0
+- rebuild using %0.07 Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.07-10mdv2009.0
 + Revision: 258878
 - rebuild
 
