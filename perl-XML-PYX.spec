@@ -2,7 +2,7 @@
 %define upstream_version 0.07
 Name:		perl-%{upstream_name}
 Version:	0.07
-Release:	2
+Release:	3
 
 Summary:	%{upstream_name} perl module
 License: 	GPL+ or Artistic
@@ -19,7 +19,7 @@ BuildArch: 	noarch
 %{upstream_name} perl module
 
 %prep
-%setup -q  -n XML-PYX-0.07
+%setup -q -n XML-PYX-0.07
 
 %build
 CFLAGS="%{optflags}" perl Makefile.PL INSTALLDIRS=vendor
